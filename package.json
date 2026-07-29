@@ -1,0 +1,15 @@
+{
+  "name": "pricelens-web-frontend",
+  "version": "1.0.0",
+  "description": "PriceLens AI Official Landing Webpage — Developed by M. Akif Fareed",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve . -p 3000",
+    "dev": "npx -y serve . -p 3000"
+  },
+  "author": "M. Akif Fareed",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

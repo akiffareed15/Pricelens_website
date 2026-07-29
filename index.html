@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PriceLens — Smart Visual Product Search, Real-Time Price Comparison, and Automated Price Drop Alerts. Engineered by M. Akif Fareed.">
+  <meta name="keywords" content="PriceLens, Visual Shopping Search, Real-time Price Comparison, Buy Timing Score, Fake Discount Detector, M. Akif Fareed">
+  <meta name="author" content="M. Akif Fareed">
+  <title>PriceLens — Smart Visual Shopping Assistant & Price Tracker | By M. Akif Fareed</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+<header id="navbar" class="navbar-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="PriceLens Home">
+        <div class="logo-icon"><i class="ri-search-eye-line"></i></div>
+        <div class="logo-text">
+          <span class="brand-name">PriceLens</span>
+          <span class="brand-byline">By M. Akif Fareed</span>
+        </div>
+      </a>
+
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+<nav id="nav-links" class="nav-links">
+        
+        <div class="sidebar-header-only-mobile">
+          <div class="brand-logo">
+            <div class="logo-icon" style="width: 38px; height: 38px; font-size: 1.2rem;"><i class="ri-search-eye-line"></i></div>
+            <div class="logo-text">
+              <span class="brand-name" style="font-size: 1.2rem;">PriceLens</span>
+              <span class="brand-byline" style="font-size: 0.68rem;">By M. Akif Fareed</span>
+            </div>
+          </div>
+          <button id="sidebar-close-btn" class="sidebar-close-btn" aria-label="Close menu"><i class="ri-close-line"></i></button>
+        </div>
+
+<a href="#home" class="nav-link active"><i class="ri-home-4-line" style="display: none;"></i> Home</a>
+        <a href="#about" class="nav-link"><i class="ri-building-4-line" style="display: none;"></i> About Us</a>
+        <a href="#features" class="nav-link"><i class="ri-cpu-line" style="display: none;"></i> Features</a>
+        <a href="#blogs" class="nav-link"><i class="ri-book-open-line" style="display: none;"></i> Guides</a>
+        <a href="#developer" class="nav-link"><i class="ri-user-star-line" style="display: none;"></i> Developer</a>
+        <a href="#contact" class="nav-link"><i class="ri-mail-star-line" style="display: none;"></i> Contact</a>
+
+<div class="sidebar-footer-mobile">
+          <a href="#download" class="btn btn-primary btn-full trigger-app-download" style="text-align: center; justify-content: center;"><i class="ri-download-cloud-2-line"></i> Download Client Suite</a>
+          <div style="text-align: center; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; margin-top: 12px;">
+            v2.4.0 • Secure Price Engine
+          </div>
+        </div>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button id="header-search-btn" class="btn btn-secondary btn-sm btn-nav"><i class="ri-search-line"></i> Live Search Deals</button>
+        <a href="#download" class="btn btn-primary btn-sm btn-nav"><i class="ri-download-cloud-2-line"></i> Get App</a>
+        <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Toggle Navigation Menu"><i class="ri-menu-3-line"></i></button>
+      </div>
+    </div>
+  </header>
+
+<main>
+    
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal-on-scroll">
+          <div class="developer-badge">
+            <i class="ri-verified-badge-fill" style="color: var(--primary); font-size: 1.15rem;"></i>
+            <span>Designed & Developed by <strong class="dev-name">M. Akif Fareed</strong></span>
+          </div>
+          
+          <h1 class="hero-title">
+            Shop Smarter with <span class="gradient-text">Instant Visual Search</span> & Price Tracking
+          </h1>
+          
+          <p class="hero-subtitle">
+            Stop overpaying online. PriceLens recognizes physical products via camera scan, cross-references historical prices across Amazon, eBay & Google Shopping, and reveals the exact Buy Timing Score™ before you checkout.
+          </p>
+          
+          <div class="download-buttons-group">
+            <a href="apk/Pricelens%20AI.apk" download="Pricelens AI.apk" id="download-android-apk" class="btn-app-store apk-download-btn">
+              <i class="ri-android-fill store-icon" style="color: #3DDC84;"></i>
+              <div class="store-info">
+                <span class="small-text">Direct Free Download</span>
+                <span class="main-text">Android APK v1.3</span>
+              </div>
+              <i class="ri-download-cloud-2-line download-arrow"></i>
+            </a>
+          </div>
+
+          <div style="margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; background: #FFF0D4; border: 1.5px solid #FFCD70; border-radius: 50px; font-size: 0.94rem; font-weight: 800; color: #8C6D00; box-shadow: 0 6px 18px rgba(140, 109, 0, 0.12); flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 1.3rem;">
+              <i class="ri-apple-fill" style="color: #27180D;"></i>
+              <i class="ri-computer-line" style="color: #8C6D00;"></i>
+              <i class="ri-global-line" style="color: #C1633B;"></i>
+            </div>
+            <span>iOS / Desktop / Web Suite <span style="background: #FFDF9A; padding: 3px 10px; border-radius: 12px; margin-left: 4px; color: #5C4700; font-size: 0.82rem; letter-spacing: 0.5px;">COMING SOON 🚀</span></span>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">500+</span>
+              <span class="stat-lbl">Stores Crawled</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">98.4%</span>
+              <span class="stat-lbl">Scan Accuracy</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">4.9★</span>
+              <span class="stat-lbl">User Rating</span>
+            </div>
+          </div>
+        </div>
+
+<div class="hero-visual reveal-on-scroll delay-2">
+          <div class="floating-badge badge-1">
+            <i class="ri-eye-line"></i> Visual Lens Recognition Active
+          </div>
+          <div class="floating-badge badge-2">
+            <i class="ri-notification-badge-line"></i> Price Drop Alert: -31% Today!
+          </div>
+
+          <div class="hero-phone-card">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="app-header-preview">
+                  <span class="app-brand"><i class="ri-search-eye-line"></i> PriceLens Scanner</span>
+                  <span class="app-badge"><span class="live-indicator" style="margin-right: 4px;"></span> LIVE ENGINE</span>
+                </div>
+
+                <div class="scan-camera-demo">
+                  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Scanning Nike Sneaker" class="scanner-img">
+                  <div class="scan-laser-line"></div>
+                  <div class="scan-focus-box">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                  </div>
+                  <span class="scan-tag">Nike Air Max SuperFly (2026 Edition)</span>
+                </div>
+
+                <div class="app-result-card">
+                  <div class="result-title">🎯 Instant Price Comparison</div>
+                  <div class="price-row">
+                    <span class="best-price">$129.99</span>
+                    <span class="old-price">$189.99</span>
+                    <span class="discount-pill">SAVE $60 (31% OFF)</span>
+                  </div>
+                  <div class="buy-score-indicator">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 0.78rem;">
+                      <span>Buy Timing Score™</span>
+                      <span style="color: #137333;">88 / 100 — HISTORIC LOW!</span>
+                    </div>
+                    <div class="score-bar">
+                      <div class="score-progress" style="width: 88%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="about" class="section about-section">
+      <div class="container">
+        <div class="text-center reveal-on-scroll">
+          <span class="sub-pill"><i class="ri-building-4-line"></i> About PriceLens</span>
+          <h2 class="section-title">Institutional Price Transparency, Engineered for Everyone</h2>
+          <p class="section-desc" style="max-width: 760px; margin: 0 auto;">
+            PriceLens was built to dismantle deceptive retail markups and place powerful pricing analytics directly in the palm of everyday consumers through intelligent software engineering.
+          </p>
+        </div>
+
+        <div class="about-grid reveal-on-scroll delay-1">
+          <div class="about-main-card glass-card">
+            <div class="about-badge"><i class="ri-focus-3-line"></i> Our Core Architecture & Vision</div>
+            <h3 class="about-heading">Revolutionizing How the World Shops with Advanced Recognition</h3>
+            <p class="about-paragraph">
+              Traditional online shopping relies on fragmented search bars and sponsored listings that obscure true market MSRP rates. PriceLens eliminates guesswork by utilizing instant camera image recognition and real-time cross-platform analytics.
+            </p>
+            <p class="about-paragraph">
+              By connecting live camera scanning directly to our high-speed monitoring network—tracking over 15,000 global merchant storefronts including Amazon, eBay, and Walmart—our automated engine uncovers historic price movements and exposes artificial pricing surges in milliseconds.
+            </p>
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-icon"><i class="ri-eye-2-line"></i></div>
+                <div>
+                  <h4 class="pillar-title">100% Price Transparency</h4>
+                  <p class="pillar-desc">Unblinded cross-platform historical price logging over trailing 30, 60, and 90-day intervals.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon"><i class="ri-shield-user-line"></i></div>
+                <div>
+                  <h4 class="pillar-title">Consumer-First Priority</h4>
+                  <p class="pillar-desc">Zero sponsored vendor bias. Our system highlights the absolute lowest verified live listings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-side-cards">
+            <div class="glass-card stat-highlight-card">
+              <div class="highlight-num">$2.5K+</div>
+              <div class="highlight-lbl">Estimated Consumer Savings Unlocked</div>
+              <p class="highlight-sub">Through automated 24/7 price drop alerts and real-time artificial markdown detection during seasonal shopping holidays.</p>
+            </div>
+            
+            <div class="glass-card tech-stack-card">
+              <div class="tech-card-title"><i class="ri-stack-line"></i> Built for Reliability & Scale</div>
+              <p class="tech-card-desc">Designed and architected by M. Akif Fareed to ensure ultra-low latency price comparisons and robust data security.</p>
+              <div class="tech-badges-row">
+                <span class="tech-badge"><i class="ri-smartphone-line"></i> Cross-Platform Client</span>
+                <span class="tech-badge"><i class="ri-line-chart-fill"></i> Live Price Engine</span>
+                <span class="tech-badge"><i class="ri-lock-2-line"></i> Encrypted Protocol</span>
+                <span class="tech-badge"><i class="ri-notification-line"></i> Instant Alerts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="features" class="section">
+      <div class="container">
+        <div class="text-center reveal-on-scroll">
+          <span class="sub-pill"><i class="ri-apps-2-line"></i> Core Suite Capabilities</span>
+          <h2 class="section-title">Why PriceLens is the Smartest Way to Shop</h2>
+          <p class="section-desc">Experience intuitive tools engineered to empower modern retail shoppers with institutional-grade pricing intelligence.</p>
+        </div>
+
+        <div class="features-grid">
+          
+          <div class="glass-card feature-card reveal-on-scroll delay-1">
+            <div class="feature-icon"><i class="ri-camera-lens-fill"></i></div>
+            <h3 class="feature-title">Instant Visual Camera Search</h3>
+            <p class="feature-text">Scan any physical product in the real world or screenshot an online listing. Our visual recognition system instantly identifies brand details and finds matching listings without typing keywords.</p>
+          </div>
+
+<div class="glass-card feature-card reveal-on-scroll delay-2">
+            <div class="feature-icon"><i class="ri-line-chart-fill"></i></div>
+            <h3 class="feature-title">Cross-Platform Deals</h3>
+            <p class="feature-text">Simultaneously monitor Google Shopping, Amazon, eBay, Walmart, and specialty retailers to uncover the absolute lowest verified price available right now.</p>
+          </div>
+
+<div class="glass-card feature-card reveal-on-scroll delay-3">
+            <div class="feature-icon"><i class="ri-time-line"></i></div>
+            <h3 class="feature-title">Buy Timing Score Algorithm</h3>
+            <p class="feature-text">Proprietary mathematical scoring (0–100) evaluates current live prices against 30, 60, and 90-day price history minimums so you know instantly whether to buy immediately or wait.</p>
+          </div>
+
+<div class="glass-card feature-card reveal-on-scroll delay-1">
+            <div class="feature-icon"><i class="ri-chat-check-line"></i></div>
+            <h3 class="feature-title">Interactive Shopping Assistant</h3>
+            <p class="feature-text">Chat with a built-in shopping advisory engine backed by live product catalogs. Quickly request honest budget alternatives, spec comparisons, and deal breakdowns.</p>
+          </div>
+
+<div class="glass-card feature-card reveal-on-scroll delay-2">
+            <div class="feature-icon"><i class="ri-notification-4-fill"></i></div>
+            <h3 class="feature-title">Automated Price Alerts</h3>
+            <p class="feature-text">Set your ideal target price and let automated background workers monitor listings 24/7, sending instant notifications the moment a verified price drop happens.</p>
+          </div>
+
+<div class="glass-card feature-card reveal-on-scroll delay-3">
+            <div class="feature-icon"><i class="ri-shield-check-fill"></i></div>
+            <h3 class="feature-title">Fake Discount Detector</h3>
+            <p class="feature-text">Automatically uncover artificial MSRP markups designed to look like "50% OFF" mega-sales during shopping holidays by cross-referencing genuine historical baseline averages.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="blogs" class="section blogs-section">
+      <div class="container">
+        <div class="text-center reveal-on-scroll">
+          <span class="sub-pill"><i class="ri-article-line"></i> Engineering Blogs & Architecture</span>
+          <h2 class="section-title">Institutional Price Intelligence: Built from Scratch</h2>
+          <p class="section-desc" style="max-width: 780px; margin: 0 auto;">
+            Explore the genuine system architectures, UI/UX performance breakthroughs, and mathematical algorithms behind PriceLens AI as engineered by M. Akif Fareed.
+          </p>
+        </div>
+
+<div class="showcase-blogs-container">
+
+<article id="blog-home-engine" class="blog-showcase-item reveal-on-scroll delay-1" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="showcase-img-column">
+              <div class="img-glow-aura"></div>
+              <figure class="showcase-img-frame">
+                <img src="assets/Home.jpeg" alt="PriceLens Real-Time Home Dashboard and Live SerpApi Trending Deals Feed engineered by M. Akif Fareed" itemprop="image">
+                <figcaption style="display: none;">PriceLens Live Trending Deals Engine & Butter-Smooth UI</figcaption>
+              </figure>
+            </div>
+
+            <div class="showcase-text-column">
+              <header class="article-meta-header">
+                <span class="article-category-pill"><i class="ri-cpu-line"></i> Frontend Architecture & UX</span>
+                <span class="article-author-meta" itemprop="author">By <strong>M. Akif Fareed</strong> • Principal Developer</span>
+              </header>
+              
+              <h3 class="showcase-article-title" itemprop="headline">
+                Engineered for Speed: Inside the Real-Time PriceLens Home Dashboard & Live Deal Engine
+              </h3>
+              
+              <p class="showcase-article-desc" itemprop="description">
+                Traditional shopping apps rely on static, outdated catalogs bloated with sponsored vendor advertisements. When building PriceLens AI, our core engineering directive was absolute zero latency combined with 100% genuine market transparency. The PriceLens Home Dashboard represents a breakthrough in modern retail client software, connecting directly to high-speed Node.js asynchronous backend routes to deliver live price drops across over 15,000 digital storefronts in real time.
+              </p>
+              
+              <div class="article-key-insights">
+                <div class="insight-point">
+                  <i class="ri-timer-flash-line"></i>
+                  <div>
+                    <strong>60 FPS Butter-Smooth Riverpod Architecture:</strong> Powered by reactive Riverpod state providers in Flutter, the interface completely eliminates screen flickering, frame jank, and reload delays during rapid category transitions (Electronics, Fashion, Home, Gaming).
+                  </div>
+                </div>
+                <div class="insight-point">
+                  <i class="ri-shield-check-fill"></i>
+                  <div>
+                    <strong>Uncorrupted by Sponsored Ads:</strong> Zero sponsored vendor rankings. Every price Markdown tag displayed on our trending feed is calculated strictly from genuine historical MSRP baseline averages harvested directly via automated SerpApi background crawlers.
+                  </div>
+                </div>
+                <div class="insight-point">
+                  <i class="ri-compass-3-line"></i>
+                  <div>
+                    <strong>Frictionless Interactive UX:</strong> Featuring instant single-tap navigation into our visual camera recognition suite, quick-toggle watchlist filtering, and live advisory chat integrations designed for effortless one-handed thumb navigation.
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-badge-row">
+                <span class="article-tech-badge"><i class="ri-flutter-fill"></i> Flutter 3.12+ Engine</span>
+                <span class="article-tech-badge"><i class="ri-server-line"></i> SerpApi Live Sync</span>
+                <span class="article-tech-badge"><i class="ri-refresh-line"></i> 0ms UI Latency</span>
+                <span class="article-tech-badge"><i class="ri-eye-2-line"></i> Unblinded Transparency</span>
+              </div>
+
+              <div class="article-footer-cta">
+                <a href="#download" class="btn btn-primary btn-sm"><i class="ri-smartphone-line"></i> Test Engine in App</a>
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"><i class="ri-verified-badge-fill" style="color: #137333;"></i> Verified System Architecture</span>
+              </div>
+            </div>
+          </article>
+
+<article id="blog-product-analysis" class="blog-showcase-item reverse-layout reveal-on-scroll delay-2" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="showcase-text-column">
+              <header class="article-meta-header">
+                <span class="article-category-pill" style="background: #137333;"><i class="ri-line-chart-fill"></i> Mathematical Algorithms & Security</span>
+                <span class="article-author-meta" itemprop="author">By <strong>M. Akif Fareed</strong> • Principal Developer</span>
+              </header>
+              
+              <h3 class="showcase-article-title" itemprop="headline">
+                Unmasking True Retail Valuation: How Our Proprietary Buy Timing Score™ & Product Analysis Work
+              </h3>
+              
+              <p class="showcase-article-desc" itemprop="description">
+                Have you ever purchased an online product only to witness its price plummet by 40% the very next week? During seasonal shopping events like Black Friday and Prime Day, mega-retailers notorious for artificial price markup scams inflate list prices just before slapping on fake "50% OFF" badges. Here is how our custom-engineered Product Analysis suite and algorithmic evaluation model protects your wallet from artificial surges.
+              </p>
+              
+              <div class="article-key-insights" style="border-left-color: #137333;">
+                <div class="insight-point">
+                  <i class="ri-numbers-line" style="color: #137333;"></i>
+                  <div>
+                    <strong>The Buy Timing Score™ Algorithm (0–100):</strong> Our proprietary mathematical formula evaluates current live listings against trailing 30, 60, and 90-day historic minimums. Scores above 80 earn a green "Good Deal" verification, while inflated prices instantly trigger a red "Wait" recommendation.
+                  </div>
+                </div>
+                <div class="insight-point">
+                  <i class="ri-radar-line" style="color: #137333;"></i>
+                  <div>
+                    <strong>Multi-Platform Asynchronous Audit:</strong> When viewing an item, the client fires concurrent REST queries to our backend, parsing Google Shopping, Amazon, eBay, and specialty vendors simultaneously to expose the absolute lowest verified live URL in under 300 milliseconds.
+                  </div>
+                </div>
+                <div class="insight-point">
+                  <i class="ri-notification-badge-line" style="color: #137333;"></i>
+                  <div>
+                    <strong>One-Tap Smart Price Drop Monitors:</strong> Integrated directly into the product analysis screen is our automated Smart Alert radar. With interactive quick-target chips (-5%, -10%, -20%), users can deploy dedicated 24/7 cloud cron workers to monitor rates automatically.
+                  </div>
+                </div>
+              </div>
+
+              <div class="article-badge-row">
+                <span class="article-tech-badge"><i class="ri-shield-star-line"></i> Fake Discount Shield</span>
+                <span class="article-tech-badge"><i class="ri-calc-line"></i> Buy Timing Math</span>
+                <span class="article-tech-badge"><i class="ri-cloud-windy-line"></i> 24/7 Cron Workers</span>
+                <span class="article-tech-badge"><i class="ri-store-3-line"></i> Cross-Platform Scraping</span>
+              </div>
+
+              <div class="article-footer-cta">
+                <a href="#download" class="btn btn-primary btn-sm"><i class="ri-line-chart-line"></i> Start Tracking Prices</a>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #137333;"><i class="ri-lock-star-fill"></i> Institutional-Grade Accuracy</span>
+              </div>
+            </div>
+
+            <div class="showcase-img-column">
+              <div class="img-glow-aura" style="background: radial-gradient(circle, rgba(19, 115, 51, 0.28) 0%, rgba(193, 99, 59, 0.2) 65%, transparent 100%);"></div>
+              <figure class="showcase-img-frame" style="border-color: rgba(19, 115, 51, 0.4);">
+                <img src="assets/product%20Analysis.jpeg" alt="PriceLens Real-Time Product Analysis, Multi-Platform Market Deals, and Buy Timing Score Algorithm" itemprop="image">
+                <figcaption style="display: none;">PriceLens Live Product Analysis & Proprietary Buy Timing Score</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+<div class="secondary-blogs-section">
+          <div class="section-divider-lbl">Additional Quick Shopping Hacks</div>
+          <div class="blogs-grid">
+            
+            <div class="glass-card blog-card reveal-on-scroll delay-1">
+              <div class="blog-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Visual Search Shopping Revolution" class="blog-img">
+                <span class="blog-category">Technology</span>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">By <strong>M. Akif Fareed</strong> • July 26, 2026</div>
+                <h3 class="blog-title">How Smart Visual Search is Revolutionizing Online Shopping in 2026</h3>
+                <p class="blog-excerpt">Discover how visual image recognition analyzes smartphone camera photos to locate exact store listings instantly across the internet.</p>
+                <div><a href="#" id="blog-read-btn-1" class="blog-read-more">Read Full Article <i class="ri-arrow-right-line"></i></a></div>
+              </div>
+            </div>
+
+<div class="glass-card blog-card reveal-on-scroll delay-2">
+              <div class="blog-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Buy Timing Algorithm Graphs" class="blog-img">
+                <span class="blog-category">Algorithms</span>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">By <strong>M. Akif Fareed</strong> • July 26, 2026</div>
+                <h3 class="blog-title">The Math Behind Buy Timing Scores & Price History Minimums</h3>
+                <p class="blog-excerpt">Ever bought a product only to see it drop 40% in price the next week? PriceLens solves this with our proprietary Buy Timing Score algorithm.</p>
+                <div><a href="#" id="blog-read-btn-2" class="blog-read-more">Read Full Article <i class="ri-arrow-right-line"></i></a></div>
+              </div>
+            </div>
+
+<div class="glass-card blog-card reveal-on-scroll delay-3">
+              <div class="blog-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80" alt="Spotting Fake Sales & Retail Markups" class="blog-img">
+                <span class="blog-category">Shopping Hacks</span>
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">By <strong>M. Akif Fareed</strong> • July 26, 2026</div>
+                <h3 class="blog-title">Spotting Fake Sales: How to Identify Artificial Retail Markups</h3>
+                <p class="blog-excerpt">During major shopping holidays, some stores artificially inflate list prices right before adding a sale badge. Here is how our automated comparison detects it.</p>
+                <div><a href="#" id="blog-read-btn-3" class="blog-read-more">Read Full Article <i class="ri-arrow-right-line"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="developer" class="section">
+      <div class="container">
+        <div class="glass-card text-center reveal-on-scroll" style="padding: 55px 36px; max-width: 880px; margin: 0 auto; border-radius: 26px;">
+          
+          <div class="dev-avatar-wrapper" style="margin-bottom: 22px;">
+            <img src="p.jpeg" alt="M. Akif Fareed - Developer & Architect" class="dev-avatar-img">
+            <div class="verified-badge"><i class="ri-verified-badge-fill"></i></div>
+          </div>
+
+          <span class="sub-pill"><i class="ri-code-s-slash-line"></i> Full Stack Web/App Developer</span>
+          <h2 class="section-title" style="margin-bottom: 14px;">Designed & Developed by M. Akif Fareed</h2>
+          <p class="section-desc" style="max-width: 700px; margin: 0 auto 32px auto;">
+            PriceLens AI was architected and built from the ground up to deliver real-time visual product recognition, automated cross-platform crawling, and institutional pricing analytics using a high-performance technology stack.
+          </p>
+          <div class="dev-skills-pills" style="justify-content: center; max-width: 720px; margin: 0 auto;">
+            <span>Flutter & Riverpod</span>
+            <span>Node.js & Express</span>
+            <span>Gemini Vision AI</span>
+            <span>SerpApi Live Crawling</span>
+            <span>MongoDB Atlas & Mongoose</span>
+            <span>Vanilla CSS & JavaScript</span>
+            <span>REST API & JWT Auth</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="download" class="section text-center">
+      <div class="container">
+        <div class="glass-card reveal-on-scroll" style="padding: 65px 32px;">
+          <span class="sub-pill"><i class="ri-rocket-2-fill"></i> Start Saving Today</span>
+          <h2 class="section-title">Download PriceLens & Never Overpay Again</h2>
+          <p class="section-desc">Join smart shoppers worldwide using visual camera search and automated price drop tracking to secure historic low deals.</p>
+          
+          <div class="download-buttons-group" style="justify-content: center; margin-bottom: 24px;">
+            <a href="apk/Pricelens%20AI.apk" download="Pricelens AI.apk" class="btn-app-store apk-download-btn">
+              <i class="ri-android-fill store-icon" style="color: #3DDC84;"></i>
+              <div class="store-info">
+                <span class="small-text">Direct Free Download</span>
+                <span class="main-text">Android APK v1.3</span>
+              </div>
+              <i class="ri-download-cloud-2-line download-arrow"></i>
+            </a>
+          </div>
+          
+          <div style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 22px; background: #FFF0D4; border: 1.5px solid #FFCD70; border-radius: 50px; font-size: 0.94rem; font-weight: 800; color: #8C6D00; box-shadow: 0 6px 18px rgba(140, 109, 0, 0.12); flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 1.3rem;">
+              <i class="ri-apple-fill" style="color: #27180D;"></i>
+              <i class="ri-computer-line" style="color: #8C6D00;"></i>
+              <i class="ri-global-line" style="color: #C1633B;"></i>
+            </div>
+            <span>iOS / Desktop / Web Suite <span style="background: #FFDF9A; padding: 3px 10px; border-radius: 12px; margin-left: 4px; color: #5C4700; font-size: 0.82rem; letter-spacing: 0.5px;">COMING SOON 🚀</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="contact" class="section">
+      <div class="container">
+        <div class="text-center reveal-on-scroll">
+          <span class="sub-pill"><i class="ri-chat-1-line"></i> Direct Developer Inquiry</span>
+          <h2 class="section-title">Get in Touch with Developer</h2>
+          <p class="section-desc" style="max-width: 650px; margin: 0 auto;">
+            Have technical inquiries about our pricing algorithms, commercial collaboration, or business integration? Send a message directly to developer M. Akif Fareed using the console below.
+          </p>
+        </div>
+
+        <div class="glass-card standalone-contact-card reveal-on-scroll delay-1">
+          <form id="contact-form" action="https://formspree.io/f/xrendpgp" method="POST" class="contact-form-standalone">
+            <div class="form-row-grid">
+              <div class="form-group">
+                <label for="contact-name">Your Full Name <span style="color: #C5221F; margin-left: 2px;">*</span></label>
+                <div class="input-with-icon">
+                  <i class="ri-user-3-line input-icon"></i>
+                  <input type="text" id="contact-name" name="name" placeholder="e.g. Alex M." required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-email">Email Address <span style="color: #C5221F; margin-left: 2px;">*</span></label>
+                <div class="input-with-icon">
+                  <i class="ri-mail-send-line input-icon"></i>
+                  <input type="email" id="contact-email" name="email" placeholder="you@domain.com" required>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group" style="margin-top: 22px;">
+              <label for="contact-message">Inquiry Details & Message <span style="color: #C5221F; margin-left: 2px;">*</span></label>
+              <div class="input-with-icon textarea-icon">
+                <i class="ri-message-3-line input-icon" style="top: 20px;"></i>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Please detail your inquiry or collaboration proposal..." required></textarea>
+              </div>
+            </div>
+            
+            <div style="margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+              <button type="submit" id="submit-contact-btn" class="btn btn-primary btn-full btn-lg-touch" style="max-width: 360px; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.3px;">
+                <i class="ri-send-plane-2-fill"></i> Send Message
+              </button>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <i class="ri-shield-check-fill" style="color: #137333; font-size: 1.1rem;"></i> Secure message routing directly to developer inbox
+              </span>
+            </div>
+          </form>
+          <div id="form-response-toast" class="hidden"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="footer">
+    <div class="container footer-content">
+      <a href="#home" class="brand-logo" aria-label="PriceLens Home">
+        <div class="logo-icon"><i class="ri-search-eye-line"></i></div>
+        <div class="logo-text">
+          <span class="brand-name">PriceLens</span>
+          <span class="brand-byline" style="font-size: 0.7rem;">By M. Akif Fareed</span>
+        </div>
+      </a>
+      <p class="footer-desc">The complete visual price comparison and deal intelligence suite. Helping modern shoppers save money with engineered transparency.</p>
+      <div style="display: flex; gap: 20px; font-size: 1.6rem;">
+        <a href="https://github.com/akiffareed15" target="_blank" style="color: var(--text-muted); transition: var(--transition);" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/akif-dev" target="_blank" style="color: var(--text-muted); transition: var(--transition);" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+        <a href="mailto:akiffareed15@gmail.com" style="color: var(--text-muted); transition: var(--transition);" aria-label="Email"><i class="ri-mail-star-fill"></i></a>
+      </div>
+      <p class="copyright-text">© 2026 PriceLens. Designed & Engineered with <i class="ri-heart-fill heart-icon"></i> by <strong>M. Akif Fareed</strong>.</p>
+    </div>
+  </footer>
+</body>
+</html>
